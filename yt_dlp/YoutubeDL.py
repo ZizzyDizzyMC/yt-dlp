@@ -2595,12 +2595,6 @@ class YoutubeDL(object):
                             info_dict['ext'] = 'mkv'
                             self.report_warning(
                                 'Requested formats are incompatible for merge and will be merged into mkv.')
-                        if (info_dict['ext'] == 'webm'
-                                and self.params.get('writethumbnail', False)
-                                and info_dict.get('thumbnails')):
-                            info_dict['ext'] = 'mkv'
-                            self.report_warning(
-                                'webm doesn\'t support embedding a thumbnail, mkv will be used.')
 
                     def correct_ext(filename):
                         filename_real_ext = os.path.splitext(filename)[1][1:]
